@@ -13,7 +13,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -31,7 +30,6 @@ import net.minecraft.util.Timer;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
@@ -39,7 +37,6 @@ import net.minecraftforge.fluids.FluidTank;
 import org.lwjgl.opengl.GL11;
 
 import com.enderio.lib.api.client.render.IConnectedTextureRenderer;
-import com.enderio.lib.client.handlers.ClientHandler;
 import com.enderio.lib.common.util.BlockCoord;
 import com.enderio.lib.common.util.Log;
 import com.enderio.lib.common.vecmath.Matrix4d;
@@ -52,6 +49,7 @@ import com.enderio.lib.common.vecmath.Vector4f;
 import com.enderio.lib.common.vecmath.Vertex;
 
 import cpw.mods.fml.relauncher.ReflectionHelper;
+
 import static net.minecraftforge.common.util.ForgeDirection.*;
 import static org.lwjgl.opengl.GL11.*;
 
@@ -697,7 +695,7 @@ public class RenderUtil {
   }
 
   public static float getRotation(float mult) {
-    return ClientHandler.getTicksElapsed() * mult;
+    return Minecraft.getMinecraft().theWorld.getTotalWorldTime() * mult;
   }
 
   public static void renderBillboardQuad(float rot, double scale) {

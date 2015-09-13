@@ -186,6 +186,9 @@ public class ResourcePackAssembler {
     return this;
   }
 
+  private static final String[] README = new String[] { "This is the actual file used for resources in-game.",
+      "Do not edit this, it will be created/deleted by the mod." };
+
   /**
    * Inserts the resource pack into the game. Enabling the resource pack will
    * not be required, it will load automatically.
@@ -205,11 +208,10 @@ public class ResourcePackAssembler {
         EnderFileUtils.safeDelete(dest);
         FileUtils.copyFile(zip, dest);
         EnderFileUtils.safeDelete(zip);
-        writeNewFile(new File(dest.getParent() + "/readme.txt"),
-            EnderCore.lang.localize("resourcepack.readme") + "\n\n" + EnderCore.lang.localize("resourcepack.readme2"));
+        writeNewFile(new File(dest.getParent() + "/readme.txt"), README[0] + "\n\n" + README[1]);
         defaultResourcePacks.add(new FileResourcePack(dest));
       } catch (Exception e) {
-        Log.error("Failed to inject resource pack for mod {}", modid, e);
+        Log.LOGGER.error("Failed to inject resource pack for mod {}", modid, e);
       }
     } else {
       Log.info("Skipping resource pack, we are on a dedicated server.");

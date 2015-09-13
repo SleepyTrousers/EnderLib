@@ -3,7 +3,7 @@ package com.enderio.lib.common.util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-final class Log {
+public final class Log {
 
   public static final Logger LOGGER = LogManager.getLogger("EnderLib");
 
