@@ -10,9 +10,9 @@ import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Property;
 
-import com.enderio.core.api.common.config.IConfigHandler;
 import com.enderio.core.common.config.AbstractConfigHandler.Section;
 import com.enderio.core.common.config.ConfigHandler;
+import com.enderio.lib.api.common.config.IConfigHandler;
 
 import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.IConfigElement;
