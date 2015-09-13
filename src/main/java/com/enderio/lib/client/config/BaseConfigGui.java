@@ -10,9 +10,8 @@ import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Property;
 
-import com.enderio.core.common.config.AbstractConfigHandler.Section;
-import com.enderio.core.common.config.ConfigHandler;
 import com.enderio.lib.api.common.config.IConfigHandler;
+import com.enderio.lib.common.config.Section;
 
 import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.IConfigElement;
@@ -48,9 +47,7 @@ public abstract class BaseConfigGui extends GuiConfig {
   /**
    * The {@link IConfigHandler} to refer to when generating this config screen
    */
-  protected IConfigHandler getConfigHandler() {
-    return ConfigHandler.instance();
-  }
+  protected abstract IConfigHandler getConfigHandler();
 
   /**
    * The lang prefix to use before your section lang keys. Default is "config.".

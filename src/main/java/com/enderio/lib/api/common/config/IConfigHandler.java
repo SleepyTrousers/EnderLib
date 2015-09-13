@@ -3,9 +3,10 @@ package com.enderio.lib.api.common.config;
 import java.io.File;
 import java.util.List;
 
-import com.enderio.core.common.config.AbstractConfigHandler.Section;
-
 import net.minecraftforge.common.config.ConfigCategory;
+
+import com.enderio.lib.common.config.Section;
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
